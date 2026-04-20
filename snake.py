@@ -9,5 +9,6 @@ class Snake:
         self.direcao = direcao
 
     def mover(self):
+        dr, dc = DIRECOES[self.direcao]
         row, col = self.corpo[0]
-        self.corpo[0] = (row - 1, col)
+        self.corpo[0] = (row + dr, col + dc)
