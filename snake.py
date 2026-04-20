@@ -27,6 +27,10 @@ class Snake:
         dr, dc = DIRECOES[self.direcao]
         row, col = self.corpo[0]
         self.corpo[0] = (row + dr, col + dc)
+
+    def crescer(self):
+        cauda = self.corpo[-1]
+        self.corpo.append(cauda)
         
 class Game:
 
