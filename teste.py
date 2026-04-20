@@ -29,3 +29,7 @@ def test_mover_para_direcao_invalida():
     cobra = Snake(pos_inicial=(5, 5), direcao='w')
     cobra.mudar_direcao('s')
     assert cobra.direcao == 'w'
+    
+def test_aparece_fruta():
+    jogo = Game(dim=(10, 10))
+    assert len(jogo.frutas) == 1
