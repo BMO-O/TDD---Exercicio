@@ -36,8 +36,9 @@ class Game:
         self.frutas = []
         self.aparecer_fruta()
 
-    def aparecer_fruta(self):
-        posicoes_livres = [(r,c) for r in range(self.linhas) for c in range(self.colunas) if (r,c) not in self.cobra.corpo]
-        frutas = random.choice(posicoes_livres)
-        self.frutas.append(frutas)
+    def posicoes_livres(self) -> list:
+        return [(r,c) for r in range(self.linhas) for c in range(self.colunas) if (r,c) not in self.cobra.corpo]
 
+    def aparecer_fruta(self):
+        livres = self.posicoes_livres()
+        self.frutas.append(random.choice(livres))
