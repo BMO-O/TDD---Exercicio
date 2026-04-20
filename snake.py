@@ -6,10 +6,10 @@ DIRECOES = {
 }
 
 OPOSTOS = {
-    'w': 's',
-    's': 'w',
-    'a': 'd',
-    'd': 'a',
+    'w': 's', # Cima se != Baixo
+    's': 'w', # Baixo se != Cima
+    'a': 'd', # Esquerda se != Direita
+    'd': 'a', # Direita se != Esquerda
 }
 class Snake:
     
