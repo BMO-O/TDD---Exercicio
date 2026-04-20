@@ -2,6 +2,7 @@ DIRECOES = {
     'w': (-1, 0), #Cima, row -1 e col não muda
     's': (1, 0), #Baixo, row +1 e col não muda
     'a': (0, -1), #Esquerda, row não muda e col -1
+    'd': (0, 1), #Direita, row não muda e col +1
 }
 
 class Snake:
