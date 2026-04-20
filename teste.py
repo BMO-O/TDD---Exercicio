@@ -48,7 +48,7 @@ def test_cobra_crece_ao_comer_fruta():
 def test_cobra_comeu_e_cresceu():
     jogo = Game(dim=(10, 10))
     cabeca = jogo.cobra.corpo[0]
-    fruta_pos = (cabeca[0], cabeca[1] + 1) # Coloca a fruta imediatamente a direita da cabeça
+    fruta_pos = (cabeca[0] - 1, cabeca[1]) # Coloca a fruta imediatamente acima da cabeça
     jogo.frutas = [fruta_pos] 
     tamanho_inicial = len(jogo.cobra.corpo)
     jogo.atualizar()
