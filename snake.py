@@ -17,6 +17,10 @@ class Snake:
         self.corpo = [pos_inicial]
         self.direcao = direcao
 
+     def mudar_direcao(self, nova: str):
+        if nova != OPOSTOS[self.direcao]:
+            self.direcao = nova
+
     def mover(self):
         dr, dc = DIRECOES[self.direcao]
         row, col = self.corpo[0]
