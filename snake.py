@@ -5,6 +5,12 @@ DIRECOES = {
     'd': (0, 1), #Direita, row não muda e col +1
 }
 
+OPOSTOS = {
+    'w': 's',
+    's': 'w',
+    'a': 'd',
+    'd': 'a',
+}
 class Snake:
     
     def __init__(self, pos_inicial: tuple, direcao: str):
