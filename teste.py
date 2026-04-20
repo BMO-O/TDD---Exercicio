@@ -33,3 +33,9 @@ def test_mover_para_direcao_invalida():
 def test_aparece_fruta():
     jogo = Game(dim=(10, 10))
     assert len(jogo.frutas) == 1
+
+def test_aparece_fruta_na_cobra():
+    jogo = Game(dim=(10, 10))
+    for fruta in jogo.frutas:
+        assert fruta not in jogo.cobra.corpo
+        
