@@ -38,4 +38,10 @@ def test_aparece_fruta_na_cobra():
     jogo = Game(dim=(10, 10))
     for fruta in jogo.frutas:
         assert fruta not in jogo.cobra.corpo
+
+def test_cobra_crece_ao_comer_fruta():
+    cobra = Snake(pos_inicial=(5, 5), direcao='w')
+    tamanho_inicial = len(cobra.corpo)
+    cobra.crescer()
+    assert len(cobra.corpo) == tamanho_inicial + 1
         
