@@ -1,5 +1,6 @@
 DIRECOES = {
-    'w': (-1, 0),
+    'w': (-1, 0), #Cima, row -1 e col não muda
+    's': (1, 0), #Baixo, row +1 e col não muda
 }
 
 class Snake:
