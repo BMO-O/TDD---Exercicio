@@ -44,4 +44,15 @@ def test_cobra_crece_ao_comer_fruta():
     tamanho_inicial = len(cobra.corpo)
     cobra.crescer()
     assert len(cobra.corpo) == tamanho_inicial + 1
+
+def test_cobra_comeu_e_cresceu():
+    jogo = Game(dim=(10, 10))
+    cabeca = jogo.cobra.corpo[0]
+    fruta_pos = (cabeca[0], cabeca[1] + 1) # Coloca a fruta imediatamente a direita da cabeça
+    jogo.frutas = [fruta_pos] 
+    tamanho_inicial = len(jogo.cobra.corpo)
+    jogo.atualizar()
+    tamanho_depois = len(jogo.cobra.corpo)
+    assert tamanho_depois == tamanho_inicial + 1
+    assert fruta_pos not in jogo.frutas # verifica se a fruta foi comida e removida do jogo
         
