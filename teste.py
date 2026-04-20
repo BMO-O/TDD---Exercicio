@@ -24,3 +24,8 @@ def test_mover_para_direcao_valida():
     cobra = Snake(pos_inicial=(5, 5), direcao='w')
     cobra.mudar_direcao('d')
     assert cobra.direcao == 'd'
+
+def test_mover_para_direcao_invalida():
+    cobra = Snake(pos_inicial=(5, 5), direcao='w')
+    cobra.mudar_direcao('s')
+    assert cobra.direcao == 'w'
