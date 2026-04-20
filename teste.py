@@ -14,3 +14,8 @@ def test_mover_para_esquerda():
     cobra = Snake(pos_inicial=(5,5), direcao='a')
     cobra.mover()
     assert cobra.corpo[0] == (5, 4)
+
+def test_mover_para_direita():
+    cobra = Snake(pos_inicial=(5,5), direcao='d')
+    cobra.mover()
+    assert cobra.corpo[0] == (5, 6)
