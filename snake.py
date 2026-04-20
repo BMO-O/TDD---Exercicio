@@ -46,3 +46,12 @@ class Game:
     def aparecer_fruta(self):
         livres = self.posicoes_livres()
         self.frutas.append(random.choice(livres))
+
+    def atualizar(self):
+        self.cobra.mover()
+        cabeca = self.cobra.corpo[0]
+        if cabeca in self.frutas:
+            self.frutas.remove(cabeca)
+            self.cobra.crescer()
+            self.aparecer_fruta()
+
