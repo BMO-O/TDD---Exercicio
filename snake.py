@@ -1,3 +1,7 @@
+DIRECOES = {
+    'w': (-1, 0),
+}
+
 class Snake:
     
     def __init__(self, pos_inicial: tuple, direcao: str):
