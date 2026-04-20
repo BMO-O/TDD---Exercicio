@@ -25,3 +25,17 @@ class Snake:
         dr, dc = DIRECOES[self.direcao]
         row, col = self.corpo[0]
         self.corpo[0] = (row + dr, col + dc)
+        
+class Game:
+
+    def __init__(self, dim: tuple):
+        self.linhas, self.colunas = dim
+        self.cobra = Snake(pos_inicial=(self.linhas//2, self.colunas//2), direcao='w')
+        self.frutas = []
+        self.aparecer_fruta()
+
+    def aparecer_fruta(self):
+        posicoes_livres = [(r,c) for r in range(self.linhas) for c in range(self.colunas) if (r,c) not in self.cobra.corpo]
+        frutas = random.choice(posicoes_livres)
+        self.frutas.append(frutas)
+
