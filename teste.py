@@ -66,7 +66,7 @@ def test_colisao_cobra_parede():
 
 def test_colisao_cobra_em_self():
     jogo = Game(dim=(5, 5))
-    jogo.cobra.corpo = [(2, 2), (2, 1), (1, 1), (1, 2)]
+    jogo.cobra.corpo = [(2, 2), (2, 1), (1, 1), (1, 2), (1,3)]
     jogo.cobra.direcao = 'w'
     assert jogo.game_over == False
     jogo.atualizar()
