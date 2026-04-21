@@ -47,9 +47,17 @@ class Game:
         livres = self.posicoes_livres()
         self.frutas.append(random.choice(livres))
 
+    def saiu_do_mapa(self, posicao: tuple) -> bool:
+        r, c = posicao
+        return r < 0 or r >= self.linhas or c < 0 or c >= self.colunas
+
     def atualizar(self):
         self.cobra.mover()
         cabeca = self.cobra.corpo[0]
+        if self.saiu_do_mapa(cabeca)
+            self.game_over = True
+            return
+
         if cabeca in self.frutas:
             self.frutas.remove(cabeca)
             self.cobra.crescer()
