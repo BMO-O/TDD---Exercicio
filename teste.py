@@ -72,4 +72,14 @@ def test_colisao_cobra_em_self():
     jogo.atualizar()
     assert jogo.game_over == True
 
-        
+def test_qtd_de_frutas():
+    jogo = Game(dim=(10, 10))
+    assert len(jogo.frutas) == 1
+
+    jogo.cobra.corpo = [(5, 5)] * 10
+    jogo.ajustar_frutas()
+    assert len(jogo.frutas) == 2
+
+    jogo.cobra.corpo = [(5, 5)] * 20
+    jogo.ajustar_frutas()
+    assert len(jogo.frutas) == 3
