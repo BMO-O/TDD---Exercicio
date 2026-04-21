@@ -57,7 +57,9 @@ class Game:
         if self.saiu_do_mapa(cabeca)
             self.game_over = True
             return
-
+        if cabeca in self.cobra.corpo[1:]:
+            self.game_over = True
+            return
         if cabeca in self.frutas:
             self.frutas.remove(cabeca)
             self.cobra.crescer()
