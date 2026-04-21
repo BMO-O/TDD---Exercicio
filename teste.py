@@ -55,4 +55,13 @@ def test_cobra_comeu_e_cresceu():
     tamanho_depois = len(jogo.cobra.corpo)
     assert tamanho_depois == tamanho_inicial + 1
     assert fruta_pos not in jogo.frutas # verifica se a fruta foi comida e removida do jogo
+
+def test_colisao_cobra_parede():
+    jogo = Game(dim=(3, 3))
+    jogo.cobra.corpo[0] = (0, 1)
+    jogo.cobra.direcao = 'w' 
+    assert jogo.game_over == False
+    jogo.atualizar()
+    assert jogo.game_over == True
+
         
