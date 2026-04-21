@@ -51,6 +51,19 @@ class Game:
         r, c = posicao
         return r < 0 or r >= self.linhas or c < 0 or c >= self.colunas
 
+    def qtd_frutas_desejada(self) -> int:
+        tamanho = len(self.cobra.corpo)
+        return tamanho // 10 + 1
+    
+    def ajustar_frutas(self):
+        desejada = self.qtd_frutas_desejada()
+
+        while len(self.frutas) < desejada:
+            self.aparecer_fruta()
+
+        while len(self.frutas) > desejada:
+            self.frutas.pop()
+
     def atualizar(self):
         self.cobra.mover()
         cabeca = self.cobra.corpo[0]
